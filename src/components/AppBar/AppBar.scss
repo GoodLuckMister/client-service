@@ -1,0 +1,15 @@
+.header {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #2a363b;
+
+  &__link {
+    color: rgb(30, 165, 206);
+    &-active {
+      color: rgb(134, 221, 19);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.user {
+  display: flex;
+  align-items: center;
+
+  &__avatar {
+    margin-right: 4;
+  }
+  &__name {
+    font-weight: 700;
+    margin-right: 12;
+  }
+}
