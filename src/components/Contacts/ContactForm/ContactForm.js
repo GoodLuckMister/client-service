@@ -6,7 +6,7 @@ import { Button, Form, FormControl } from 'react-bootstrap';
 export default function ContactForm() {
   const [contacts, setContacts] = useState({
     name: '',
-    number: '',
+    email: '',
   });
   const items = useSelector(contactsSelector.getItems);
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function ContactForm() {
     if (items.some(contact => contact.name === contacts.name)) {
       setContacts({
         name: '',
-        number: '',
+        email: '',
       });
       return alert(`${contacts.name} is already in contacts`);
     }
@@ -35,7 +35,7 @@ export default function ContactForm() {
     onSubmit(contacts);
     setContacts({
       name: '',
-      number: '',
+      email: '',
     });
   };
 
@@ -56,15 +56,12 @@ export default function ContactForm() {
       </Form.Label>
       <br />
       <Form.Label className="label">
-        Number
+        Email
         <FormControl
           type="tel"
           size="lg"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-          required
-          value={contacts.number}
+          name="email"
+          value={contacts.email}
           onChange={changeValue}
         />
       </Form.Label>

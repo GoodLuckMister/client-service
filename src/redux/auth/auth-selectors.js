@@ -1,4 +1,5 @@
 const getIsAuthenticated = state => state.auth.isAuthenticated;
+const getVerifyRegister = state => state.auth.register;
 
 const getUsername = state => state.auth.user.name;
 
@@ -6,4 +7,5 @@ const getUsername = state => state.auth.user.name;
 export default {
   getIsAuthenticated,
   getUsername,
+  getVerifyRegister,
 };

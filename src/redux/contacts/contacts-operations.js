@@ -10,11 +10,11 @@ const addContact = text => async dispatch => {
     dispatch(contactsAction.addContactError(message));
   }
 };
-const deleteContact = id => async dispatch => {
+const deleteContact = _id => async dispatch => {
   dispatch(contactsAction.deleteContactRequest());
   try {
-    await axios.delete(`/contacts/${id}`);
-    dispatch(contactsAction.deleteContactSuccess(id));
+    await axios.delete(`/contacts/${_id}`);
+    dispatch(contactsAction.deleteContactSuccess(_id));
   } catch ({ message }) {
     dispatch(contactsAction.deleteContactError(message));
   }

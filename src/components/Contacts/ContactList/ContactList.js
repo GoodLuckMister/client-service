@@ -20,16 +20,15 @@ export default function ContactLis() {
 
   return (
     <>
-      {filtered.map(({ id, name, number }) => (
-        <ListGroup key={id}>
+      {filtered.map(({ _id, name, email }) => (
+        <ListGroup key={_id}>
           <ListGroup.Item className="list__item">
-            <p className="list__title">
-              {name}:{number}
-            </p>
+            <p className="list__title">{name}</p>
+            <p className="list__title">{email}</p>
 
             <Button
               variant="danger"
-              onClick={() => onDeleteContact(id)}
+              onClick={() => onDeleteContact(_id)}
               type="button"
               aria-label="delete"
             >
